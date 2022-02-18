@@ -13,4 +13,6 @@ if (process.env.NODE_ENV === "production") {
   pool = new Pool();
 }
 
+pool.connect();
+
 module.exports = pool;
