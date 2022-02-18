@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
     const games = await Lobby.all;
     res.json({ games });
   } catch (err) {
-    res.status(500).json({ err });
+    res.status(500).json({ error: err });
   }
 });
 
@@ -19,7 +19,7 @@ router.get("/id/:id", async (req, res) => {
     const lobby = await Lobby.findByID(req.params.id);
     res.json(lobby);
   } catch (err) {
-    res.status(404).json({ err });
+    res.status(404).json({ error: err });
   }
 });
 
@@ -29,7 +29,7 @@ router.get("/:category", async (req, res) => {
     const games = await Lobby.findByCategory(req.params.category);
     res.json(games);
   } catch (err) {
-    res.status(404).json({ err });
+    res.status(404).json({ error: err });
   }
 });
 
@@ -44,7 +44,7 @@ router.post("/", async (req, res) => {
     );
     res.json(game);
   } catch (err) {
-    res.status(404).json({ err });
+    res.status(404).json({ error: err });
   }
 });
 
@@ -56,7 +56,7 @@ router.delete("/:id", async (req, res) => {
     await lobby.destroy();
     res.status(204).end();
   } catch (err) {
-    res.status(500).json({ err });
+    res.status(500).json({ error: err });
   }
 });
 
