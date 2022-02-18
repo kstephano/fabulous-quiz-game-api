@@ -16,7 +16,7 @@ class Lobby {
         const games = gamesData.rows.map((g) => new Lobby(g));
         resolve(games);
       } catch (err) {
-        reject("Error retrieving Games");
+        reject("(Model) Error retrieving Games");
       }
     });
   }
@@ -30,7 +30,7 @@ class Lobby {
         const lobby = new Lobby(lobbyData.rows[0]);
         resolve(lobby);
       } catch (err) {
-        reject("Error retrieving users");
+        reject("(Model) Error retrieving users");
       }
     });
   }
@@ -45,7 +45,7 @@ class Lobby {
         const games = gamesData.rows.map((g) => new Lobby(g));
         resolve(games);
       } catch (err) {
-        reject("Error retrieving games");
+        reject("(Model) Error retrieving games");
       }
     });
   }
@@ -60,7 +60,7 @@ class Lobby {
         let newGame = new Lobby(gameData.rows[0]);
         resolve(newGame);
       } catch (err) {
-        reject(`Error creating game: ${err}`);
+        reject(`(Model) Error creating game: ${err}`);
       }
     });
   }
@@ -71,7 +71,7 @@ class Lobby {
         await db.query("DELETE FROM lobbies WHERE id = $1;", [id]);
         res("Lobby was deleted");
       } catch (err) {
-        rej(`Error deleting lobby: ${err}`);
+        rej(`(Model) Error deleting lobby: ${err}`);
       }
     });
   }
