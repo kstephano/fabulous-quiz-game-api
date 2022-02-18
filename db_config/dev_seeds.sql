@@ -1,15 +1,17 @@
 INSERT INTO users (username, score, lobby_id)
 VALUES
-    ('Beth', 0.72, 1),
-    ('Naz', 0.4, 1),
-    ('Rhys', 0.4, 1),
-    ('Peter', 0.9, 2),
-    ('Kelvin', 0.8, 2),
-    ('Rhys', 0.74, 2),
-    ('Emily', 0.9, 2);
+    ('Beth', 71, 1),
+    ('Naz', 40, 1),
+    ('Rhys', 40, 1),
+    ('Peter', 90, 2),
+    ('Kelvin', 80, 2),
+    ('Rhys', 89, 2),
+    ('Emily', 89, 2),
+    ('Jakirul', 100, 2);
 
 
-INSERT INTO lobbies (category)
+INSERT INTO lobbies (category, rounds, difficulty, roundLimit)
 VALUES
-    ('Entertainment: Movies'),
-    ('General Knowledge');
+    (11, 2, 'Easy',50),
+    (9, 10, 'Medium',50);
+    (10, 10, 'Hard',50);
